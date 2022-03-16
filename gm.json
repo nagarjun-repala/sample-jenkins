@@ -4,7 +4,7 @@
     "networkConfiguration": {
       "awsvpcConfiguration": {
         "subnets": [
-          "subnet-96d483b9",
+          "subnet-a2b19ee9",
           "subnet-f11372de"
         ],
         "securityGroups": [
