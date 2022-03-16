@@ -1,0 +1,32 @@
+{
+    "cluster": "Jenkins-Kaniko-nonprod",
+    "launchType": "FARGATE",
+    "networkConfiguration": {
+      "awsvpcConfiguration": {
+        "subnets": [
+          "subnet-96d483b9",
+          "subnet-f11372de"
+        ],
+        "securityGroups": [
+          "sg-0ae63d178f9f45bdb"
+        ],
+        "assignPublicIp": "DISABLED"
+      }
+    },
+    "overrides": {
+      "containerOverrides": [
+        {
+          "name": "jenkins-kaniko-agent-nonprod",
+          "command": [
+            "--context",
+            "s3://gm-kaniko-build-nonprod/build.tar.gz",
+            "--context-sub-path",
+            "./",
+            "--destination",
+            "592139290745.dkr.ecr.us-east-1.amazonaws.com/gm-kaniko-nonprod:v1",
+            "--force"
+          ]
+        }
+      ]
+    }
+  }
