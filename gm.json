@@ -18,10 +18,10 @@
         {
           "name": "jenkins-kaniko-agent-nonprod",
           "command": [
+            "--dockerfile",
+            "./",
             "--context",
             "s3://gm-kaniko-build-nonprod/build.tar.gz",
-            "--context-sub-path",
-            "./",
             "--destination",
             "592139290745.dkr.ecr.us-east-1.amazonaws.com/gm-kaniko-nonprod:v1",
             "--force"
